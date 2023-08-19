@@ -1,4 +1,4 @@
-# l_ranguage
+# R language
 Learn R language.
 
 
