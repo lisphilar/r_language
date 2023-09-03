@@ -10,7 +10,7 @@ on:
 jobs:
   convert:
     name: convert jupyter notebook file to R script file
-    run-on: ubuntu-latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: check out repository
