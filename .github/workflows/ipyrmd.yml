@@ -27,12 +27,14 @@ jobs:
       - name: run conversion to R scripts
         run: |
           mkdir -p scripts
-          for f in *.ipynb; do ipyrmd --to R -o scripts/${f%.*}.R $f; done
+          rm -rf script
+          for f in *.ipynb; do ipyrmd --to R -o script/${f%.*}.R $f; done
 
       - name: run conversion to R Markdown
         run: |
-          mkdir -p scripts
-          for f in *.ipynb; do ipyrmd --to Rmd -o scripts/${f%.*}.md $f; done
+          mkdir -p markdown
+          rm -rf markdown
+          for f in *.ipynb; do ipyrmd --to Rmd -o markdown/${f%.*}.md $f; done
 
       - name: Git add & commit
         uses: EndBug/add-and-commit@v9
