@@ -26,14 +26,14 @@ jobs:
       
       - name: run conversion to R scripts
         run: |
-          mkdir -p script
           rm -rf script
+          mkdir -p script
           for f in *.ipynb; do ipyrmd --to R -o script/${f%.*}.R $f; done
 
       - name: run conversion to R Markdown
         run: |
-          mkdir -p markdown
           rm -rf markdown
+          mkdir -p markdown
           for f in *.ipynb; do ipyrmd --to Rmd -o markdown/${f%.*}.md $f; done
 
       - name: Git add & commit
