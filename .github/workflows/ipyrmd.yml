@@ -1,4 +1,4 @@
-name: Commit R script file
+name: convert Jupyter notebooks to R scripts and R Markdown files
 
 on:
   push:
@@ -9,7 +9,7 @@ on:
 
 jobs:
   convert:
-    name: convert jupyter notebook file to R script file
+    name: convert Jupyter notebooks to R scripts and R Markdown files
     runs-on: ubuntu-latest
 
     steps:
@@ -24,10 +24,15 @@ jobs:
       - name: install ipyrmd package
         run : pip install ipyrmd
       
-      - name: run conversion
+      - name: run conversion to R scripts
         run: |
           mkdir -p scripts
           for f in *.ipynb; do ipyrmd --to R -o scripts/${f%.*}.R $f; done
+
+      - name: run conversion to R Markdown
+        run: |
+          mkdir -p scripts
+          for f in *.ipynb; do ipyrmd --to Rmd -o scripts/${f%.*}.md $f; done
 
       - name: Git add & commit
         uses: EndBug/add-and-commit@v9
