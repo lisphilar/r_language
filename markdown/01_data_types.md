@@ -1,7 +1,7 @@
 <a href="https://colab.research.google.com/github/lisphilar/r_language/blob/main/01_data_types.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
 # R language: data types
-As data types, R langunage has vectors, lists, dataframes and matrixes. Lists can accept different types for elements. Dataframe is a two-dimensional data structure. Matrixes are for numeric values.
+As data types, R language has vectors, lists, data frames and matrixes. Lists can accept different types of elements. Data frame is a two-dimensional data structure. Matrixes are for numeric values.
 
 R version:
 
